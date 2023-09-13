@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+ 
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'main-menu',
     pathMatch: 'full'
+  },
+  {
+    path: 'main-menu',
+    loadChildren: () => import('./pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
+  },
+  {
+    path: 'galeria-imagenes-basica',
+    loadChildren: () => import('./pages/galeria-imagenes-basica/galeria-imagenes-basica.module').then( m => m.GaleriaImagenesBasicaPageModule)
   },
 ];
 
