@@ -16,6 +16,7 @@ const routes: Routes = [
     path: 'galeria-imagenes-basica',
     loadChildren: () => import('./pages/galeria-imagenes-basica/galeria-imagenes-basica.module').then( m => m.GaleriaImagenesBasicaPageModule)
   },
+
 ];
 
 @NgModule({
