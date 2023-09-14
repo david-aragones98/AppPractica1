@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-galeria-imagenes-basica',
@@ -7,7 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleriaImagenesBasicaPage implements OnInit {
 
-  constructor() { }
+
+  data: any[] = [];
+
+  constructor(public http:HttpClient) {
+
+    this.getImage();
+   }
+
+
+getImage(){
+  this.http.get<any>("https://jsonplaceholder.typicode.com/todos").subscribe(data =>{
+    console.log(data);
+    this.data = data;
+  }, e => {
+    console.log("compa algo peto al traer imagenes",e)
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   ngOnInit() {
   }

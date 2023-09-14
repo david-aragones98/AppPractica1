@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">galeria-imagenes-basica</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item *ngFor="let item of data">
+    <ion-label>
+        {{item?.title}}
+    </ion-label>
+  </ion-item>
 </ion-content>
